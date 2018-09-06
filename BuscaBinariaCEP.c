@@ -49,7 +49,7 @@ int main(int argc, char**argv)
         if(strncmp(argv[1],e.cep,8)==0)
         {
             printf("%.72s\n%.72s\n%.72s\n%.72s\n%.2s\n%.8s\n",e.logradouro,e.bairro,e.cidade,e.uf,e.sigla,e.cep);
-            printf("%ld\n tentativas",i);
+            printf("%ld tentativas \n",i);
             break;
         } else if(strncmp(argv[1],e.cep,8)>0){
         	inicio=meio+1;
