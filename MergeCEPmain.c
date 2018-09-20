@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
 		
 	}
 	
-	fclose(f0);
+    fclose(f0);
     fclose(f1);
     fclose(f2);
 	
