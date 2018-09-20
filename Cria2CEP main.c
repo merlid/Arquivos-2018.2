@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
 	e2 = fopen("cep2_ordenado.dat","w");
 	
 	c = fread(buffer,1,t,e0);
+	
     while(c > 0)
     {
     	if(rand()%2==1)	fwrite(buffer,1,c,e1);
