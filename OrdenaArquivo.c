@@ -22,8 +22,7 @@ void merge(FILE *f0, FILE *f1, FILE *f2){
 	c1 = fread(&buffer1,1,tamreg,f1);
 	c2 = fread(&buffer2,1,tamreg,f2);
 	
-	while(c1>0 && c2>0){
-		
+	while(c1>0 && c2>0){		
 		if(strncmp(&buffer1[key],&buffer2[key],keysize)<0){			
 			fwrite(&buffer1,c1,1,f0);			
 			c1 = fread(&buffer1,1,tamreg,f1);
@@ -66,8 +65,7 @@ int main(int argc, char *argv[]) {
 	char buffer[qtdreg*tamreg];	
 	
 	c0 = fread(buffer, tamreg, qtdreg, f0);
-	while(c0>0){
-		
+	while(c0>0){		
 		qsort(buffer, qtdreg, tamreg, compara);
 		
 		sprintf(nome,"bloco%d.dat", atual);	
@@ -86,8 +84,7 @@ int main(int argc, char *argv[]) {
 	char buffer1[tamreg], buffer2[tamreg];
 	atual=0;
 	
-	while(atual<final){
-		
+	while(atual<final){		
 		sprintf(nome,"bloco%d.dat", atual);
 		atual++;
 		f1= fopen(nome, "r");
@@ -98,8 +95,7 @@ int main(int argc, char *argv[]) {
 		
 		final++;
 		sprintf(nome, "bloco%d.dat", final);
-		f0= fopen(nome,"w");
-		
+		f0= fopen(nome,"w");		
 		
 		merge(f0, f1, f2);
 		
